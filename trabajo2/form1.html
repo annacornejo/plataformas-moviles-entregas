@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Pre-Inscripcion</title>
+    <link rel="stylesheet" href="form.css">
+    <link rel="stylesheet" href="estilos3.css">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="https://kit.fontawesome.com/17cd036e8a.js" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <center><h1>Formulario de Pre-Inscripcion</h1></center><br>
+<div class="container-fluid">
+    <form action="/procesar_inscripcion" method="post">
+        <div class="row">
+        <div class="col-4 form-floating">
+            <input type="text" id="apellido" name="apellido" class="form-control" placeholder="apellido" required> 
+            <label for="apellido">Apellido</label>
+        </div>
+        <div class="col-4 form-floating">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" class="form-control" required>
+        </div>
+        <div class="col-4">
+            <div class="form-date">
+                <label class="form-date__label" for="input-date">Fecha de inicio</label>
+                <input class="form-date__input" type="date" id="input-date" name="input-date-start" value="2018–07–22">
+                </div>
+        </div> 
+        <div class="col-4 form-floating mt-3">
+            <label for="dni">DNI:</label>
+        <input type="text" id="dni" name="dni" required pattern="[0-9]{8}" title="El DNI debe contener 8 números." maxlength="8" class="form-control">
+        </div>
+
+        <div class="col-4 form-floating mt-3">
+            <label for="edad">Edad:</label>
+            <input type="number" id="edad" name="edad" min="1" class="form-control" required>
+        </div>
+
+        <div class="col-4 mt-3">
+            <select class="form-select" id="genero" name="genero" aria-label="Default select example">
+                <option selected>Genero:</option>
+                <option value="masculino">Masculino</option>
+                <option value="femenino">Femenino</option>
+                <option value="otro">Otro</option>
+            </select>
+        </div>
+    </div>
+        <h4 class="mt-3">Domicilio</h4>
+        <div class="row">
+            <div class="col-4 form-floating">
+                <label for="calle">Calle:</label>
+                <input type="text" id="calle" name="calle" class="form-control" required>
+            </div>
+            <div class="col-4 form-floating">
+                <label for="numero">Número:</label>
+                <input type="text" id="numero" name="numero" class="form-control" required>
+            </div>
+            <div class="col-4 form-floating">
+                <label for="piso">Piso:</label>
+                <input type="text" id="piso" name="piso" class="form-control" required>
+            </div>
+            <div class="col-4 form-floating mt-3">
+                <label for="depto">Depto:</label>
+                <input type="text" id="depto" name="depto" class="form-control" required>
+            </div>
+            <div class="col-4 form-floating mt-3">
+                <label for="provincia">Provincia</label>
+                <input type="text" id="provincia" name="provincia" class="form-control" required>
+            </div>
+            <div class="col-4 form-floating mt-3">
+                <label for="distrito">Distrito:</label>
+                <input type="text" id="distrito" name="distrito" class="form-control" required>
+            </div>
+            <div class="col-4 form-floating mt-3">
+                <label for="localidad">Localidad:</label>
+                <input type="text" id="localidad" name="localidad" class="form-control" required>
+            </div>
+            <div class="col-4 form-floating mt-3">
+                <label for="codigo_postal">Código Postal:</label>
+                <input type="text" id="codigo_postal" name="codigo_postal" class="form-control" required>
+            </div>
+            <div class="col-4 form-floating mt-3">
+                <label for="telefono">Telefono:</label>
+                <input type="text" id="telefono" name="telefono" class="form-control" required>
+            </div>
+            <div class="col-4 form-floating mt-3">
+                <label for="celular">Celular:</label>
+                <input type="text" id="celular" name="celular" class="form-control" required>
+            </div>
+        </div>
+        <h4 class="mt-4">Datos de la persona responsable</h4>
+        <div class="row">
+            <div class="col-4 form-floating mt-3">
+                <label for="apellidoAdulto">Apellido</label>
+                <input type="text" id="apellidoAdulto" name="apellidoAdulto" class="form-control" required> 
+            </div>
+            <div class="col-4 form-floating mt-3">
+                <label for="nombreAdulto">Nombre</label>
+                <input type="text" id="nombreAdulto" name="nombreAdulto" class="form-control" required>
+            </div>
+            <div class="col-4">
+                <h5>Vinculo con el alumno:</h5>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">madre</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                    <label class="form-check-label" for="inlineCheckbox2">padre</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                    <label class="form-check-label" for="inlineCheckbox3">tutor</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option4">
+                    <label class="form-check-label" for="inlineCheckbox3">otro</label>
+                  </div>
+            </div>
+            <div class="col-4 form-floating mt-3">
+                <label for="nacionalidad">Nacionalidad</label>
+                <input type="text" id="nacionalidad" name="nacionalidad" class="form-control" required>
+            </div>
+            <div class="col-4">
+                <div class="form-date">
+                    <label class="form-date__label coso" for="input-date">Fecha de nacimiento</label>
+                    <input class="form-date__input" type="date" id="input-date" name="fechanac" value="2018–07–22">
+                    </div>
+            </div>
+            <div class="col-4 form-floating mt-3">
+                <label for="dni">DNI:</label>
+                <input type="text" id="dni" name="dni" required pattern="[0-9]{8}" title="El DNI debe contener 8 números." maxlength="8" class="form-control">
+            </div> 
+            <div class="col-4 form-floating mt-3">
+                <label for="profesion">Profesion u Ocupacion</label>
+                <input type="text" id="profesion" name="profesion" class="form-control" required>
+            </div> 
+
+            <div class="col-8">
+                <h5>Nivel academico mas alto:</h5>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1"> Primario</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                    <label class="form-check-label" for="inlineCheckbox2">Secundario</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                    <label class="form-check-label" for="inlineCheckbox3">superior</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option4">
+                    <label class="form-check-label" for="inlineCheckbox3">Superior universitario</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option5">
+                    <label class="form-check-label" for="inlineCheckbox3">Posgrado</label>
+                  </div>
+            </div>
+        </div>
+        <div class="row">
+            <h4 class="mt-4">Inscripcion</h4>
+            <div class="col-3">
+                <label>Hermanos o hermanas: </label><br>
+                <input class="form-check-input" type="checkbox" name="opcion" value="opcion1">
+                <label for="">si</label>
+                <input class="form-check-input" type="checkbox" name="opcion" value="opcion2">
+                <label for="">NO</label>
+            </div>
+            <div class="col-4 form-floating">
+                <input type="text" id="cuantos" name="cuantos" class="form-control" placeholder="Cuantos hermanos" required>
+                <label for="cuantos">Cuantos hermanos</label>
+            </div> 
+            <div class="col-4 form-floating">
+                <input type="text" id="cantidad" name="cantidad" class="form-control" placeholder="Cantidad que asiste al establecimiento" required>
+                <label for="cantidad">Cantidad que asiste al establecimiento</label>
+            </div> 
+            <div class="col-3 mt-3">
+                <h5>Se inscribe en:</h5>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1"> Ciclo basico</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                    <label class="form-check-label" for="inlineCheckbox2">Ciclo superior</label>
+                  </div>
+            </div>
+            <div class="col-4 form-floating mt-3">
+                <input type="text" id="orientacion" name="orientacion" class="form-control" placeholder="Orientacion" required>
+                <label for="orientacion">Orientacion</label>
+            </div> 
+            <div class=" col-4 mt-3">
+                <h5>Año</h5>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1"> 1</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                    <label class="form-check-label" for="inlineCheckbox2">2</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                    <label class="form-check-label" for="inlineCheckbox3">3</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option4">
+                    <label class="form-check-label" for="inlineCheckbox3">4</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option5">
+                    <label class="form-check-label" for="inlineCheckbox3">5</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option6">
+                    <label class="form-check-label" for="inlineCheckbox3">6</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option7">
+                    <label class="form-check-label" for="inlineCheckbox3">7</label>
+                  </div>
+            </div>
+            <div class=" col-3 mt-3">
+                <h5>Turno solicitado:</h5>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1"> Mañana</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                    <label class="form-check-label" for="inlineCheckbox2">Tarde</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                    <label class="form-check-label" for="inlineCheckbox3">Noche</label>
+                  </div>
+                </div>
+                <div class="col-5 mt-3">
+                    <h5>Jornada:</h5>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                        <label class="form-check-label" for="inlineCheckbox1"> Simple</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                        <label class="form-check-label" for="inlineCheckbox2">Extendida</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                        <label class="form-check-label" for="inlineCheckbox3"> Completa/Doble escolaridad</label>
+                      </div>
+                    </div>
+                    <div class=" col-4 mt-3">
+                        <h5>Condicion de la inscripcion:</h5>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                            <label class="form-check-label" for="inlineCheckbox1">Ingresante al nivel</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                            <label class="form-check-label" for="inlineCheckbox2">Promovida/o</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                            <label class="form-check-label" for="inlineCheckbox3">Reinscripto/a</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option4">
+                            <label class="form-check-label" for="inlineCheckbox3">Repitente</label>
+                          </div>
+                    </div>
+            </div>
+        <input type="submit" value="Enviar" class="btn btn-primary col-12 mt-5 ">
+    </div>
+    </form>
+    <footer class="pie-pagina">
+        <div class="grupo-1">
+            <div class="box">
+                    <a href="#">
+                        <img src="logoeest4.png" alt="Mi Logo">
+                    </a>
+                                </div>
+            <div class="box">
+                <h2>SOBRE NOSOTROS</h2>
+                <p><Lorem>Somos una escuela tecnica ubicada en Berazategui la cual tiene orientaciones en programacion e informatica.</Lorem></p>
+            </div>
+            <div class="box">
+                <h2>SIGUENOS</h2>
+                <div class="red-social">
+                    <a href="https://www.instagram.com/tecnica4berazategui/" class="fa fa-instagram"></a>
+                    <a href="https://www.youtube.com/channel/UCLBtcIfohEyNYJqRvaaKpNQ" class="fa fa-youtube"></a>
+                    <a href="https://campus.tecnica4berazategui.edu.ar/login/index.php" class="fa fa-school"></a>
+                </div>
+            </div>
+        </div>
+        <div class="grupo-2">
+            <small>&copy; 2023 <b>E.E.S.T N°4</b> - Todos los derechos reservados.</small>
+        </div>
+    </footer>
+    <script>
+
+    </script>
+</body>
+</html>
